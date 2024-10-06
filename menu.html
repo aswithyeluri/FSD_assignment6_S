@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    /* Your existing styles here */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    
+    header {
+    background-color: transparent;
+    color: white;
+    padding: 2rem; /* Increase padding to increase header size */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header h1 {
+    font-size: 3rem; /* Increase font size for the heading */
+    margin-bottom: 1rem;
+  }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+
+    header video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+
+    section {
+      padding: 2rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .menu-category {
+      margin-bottom: 2rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f5f5f5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: white;
+    }
+
+    /* Additional style for dish images */
+    .dish-image {
+      max-width: 100px;
+      max-height: 100px;
+    }
+
+    /* Additional style for navigation links */
+    header nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    header nav ul li {
+      margin: 0 10px;
+    }
+
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    header nav ul li a:hover {
+      color: #f5f5f5; /* Change color on hover */
+    }
+    .contact-details {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 2rem 0;
+      background-color: #333;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .contact-details h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .contact-details p {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <video autoplay muted loop>
+      <source src="bgvideo2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <h1>Food Court</h1>
+    <nav>
+      <ul>
+        <li><a href="home2.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="order.html">Online Ordering</a></li>
+        <li><a href="reservations.html">Reservations</a></li>
+        <li><a href="costrev.html">Customer Reviews</a></li>
+        <li><a href="gallery.html">Photo Gallery</a></li>
+        <li><a href="offers.html">Special Offers</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="events.html">Events & Catering</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <section id="menu">
+    <h2>Menu</h2>
+    <div class="menu-category">
+      <h3>Appetizers</h3>
+      <table>
+        <tr>
+          <th>Dish</th>
+          <th>Dish name</th>
+          <th>Description</th>
+          <th>Price</th>
+        </tr>
+        <tr>
+          <td><img class="dish-image" src="spring_rollls.jpeg" alt="Spring Rolls"></td>
+          <td>Spring Rolls</td>
+          <td>Crispy spring rolls filled with vegetables.</td>
+          <td>RS.199</td>
+        </tr>
+        <tr>
+          <td><img class="dish-image" src="Bruschetta.jpeg" alt="Spring Rolls"></td>
+          <td>Bruschetta</td>
+          <td>Grilled bread topped with fresh tomatoes and herbs.</td>
+          <td>RS.299</td>
+        </tr>
+        <tr>
+          <td><img class="dish-image" src="Boti kebab.jpg" alt="Boti kebab"></td>
+          <td>Boti kebab</td>
+          <td>Boti kebab is a variety of Indian kebab consisting of chunks of meat (lamb, mutton, chicken, or beef) that are soaked in a mixture of yogurt, garlic, ginger, chilis, papaya, and spices such as garam masala, chili powder, and cumin.</td>
+          <td>RS.299</td>
+        </tr>
+        <tr>
+          <td><img class="dish-image" src="Khandvi.jpg" alt="Khandvi"></td>
+          <td>Khandvi</td>
+          <td>Khandvi is a popular Gujarati snack made from a batter consisting of gram flour, yogurt, turmeric, and ginger paste</td>
+          <td>RS.299</td>
+        </tr>
+        <tr>
+          <td><img class="dish-image" src="Bikaneri bhujia.jpg" alt="Bikaneri bhujia"></td>
+          <td>Bikaneri bhujia</td>
+          <td>The city of Bikaner in the Indian state of Rajasthan is most famous for its bhujia, a popular, crispy snack made with flour and a variety of spices.</td>
+          <td>RS.299</td>
+        </tr>
+        <tr>
+          <td><img class="dish-image" src="Dahi vada.jpg" alt="Dahi vada"></td>
+          <td>Dahi vada</td>
+          <td>Dahi vada is a popular Indian snack that can also be served either as a main dish or as an accompaniment to vegetable or meat dishes..</td>
+          <td>RS.299</td>
+        </tr>
+        
+       
+        <!-- Add more appetizers here -->
+      </table>
+    </div>
+    
+    <div class="menu-category">
+      <h3>Main Courses</h3>
+      <table>
+        <tr>
+          <th>Dish</th>
+          <th>Dish name</th>
+          <th>Description</th>
+          <th>Price</th>
+        </tr>
+        <tr>
+          <td><img class="dish-image" src="gsalmon.jpeg" alt="Grilled Salmon"></td>
+          <td>Grilled Salmon</td>
+          <td>Freshly grilled salmon served with a lemon dill sauce.</td>
+          <td>RS.599</td>
+        </tr>
+        <tr>
+          <td><img class="dish-image" src="calfredo.jpeg" alt="Chicken Alfredo"></td>
+          <td>Chicken Alfredo</td>
+          <td>Creamy Alfredo sauce with grilled chicken over pasta.</td>
+          <td>RS.799</td>
+        </tr>
+        <!-- Add more main courses here -->
+      </table>
+    </div>
+    
+    <!-- Add more menu categories here -->
+  </section>
+  </section>
+  <section class="contact-details">
+    <h2>Contact Us</h2>
+    <p>Email: info@foodcourt.com</p>
+    <p>Phone: +91 9392468082</p>
+    <p>Address: Near Vignan university, Vadlamudi, Guntur</p>
+    <p>&copy; 2023 Food Court. All rights reserved.</p>
+  </section>
+</body>
+</html>

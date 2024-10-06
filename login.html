@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="loginstyle.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <h2>Login</h2>
+      <form action="/login" method="POST">
+        <div class="input-box">
+            <input type="text" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="input-box">
+            <input type="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <div class="policy">
+            <input type="checkbox">
+            <h3>Remember me</h3>
+        </div>
+        <div class="input-box button">
+            <input type="submit" value="Login Now">
+        </div>
+        <div class="text">
+            <h3>Don't have an account? <a href="signup.html">Register now</a></h3>
+        </div>
+    </form>
+    
+    </div>
+  </body>
+  <!-- <script>
+    // const express = require('express');
+    // const fs = require('fs');
+    // const app = express();
+
+    // app.use(express.urlencoded({ extended: true })); // Middleware to handle form data
+    // app.use(express.json()); // Middleware to handle JSON data
+
+    app.post('/login', (req, res) => {
+        const { email, password, rememberMe } = req.body; // Capture form data
+
+        // Check if the email and password are provided
+        if (!email || !password) {
+            return res.status(400).send('Email and password are required');
+        }
+
+        // Read the users from the users.json file
+        const users = JSON.parse(fs.readFileSync('users.json', 'utf8'));
+        const user = users.find(u => u.email === email && u.password === password);
+
+        if (user) {
+            // If "Remember me" is checked, simulate saving login session (extend session expiry)
+            if (rememberMe) {
+                // Simulate logic for "remember me" (e.g., saving session or generating a long-lasting token)
+                res.send('Login successful, and "Remember me" option is activated');
+            } else {
+                res.send('Login successful');
+            }
+        } else {
+            res.status(401).send('Incorrect email or password');
+        }
+    });
+
+    app.listen(3000, () => {
+        console.log('Server is running on port 3000');
+    }); -->
+
+    <!-- <script>
+    const form = document.querySelector('form');
+    
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent the default form submission
+
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        fetch('/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            if (data.message === 'Login successful') {
+                window.location.href = '/index.html'; // Redirect to index page
+            }
+        })
+        .catch(error => {
+            alert('Login failed');
+            console.error('Error:', error);
+        });
+    });
+</script> -->
+<script>
+    document.querySelector('form').addEventListener('submit', async function (e) {
+        e.preventDefault(); // Prevent default form submission
+    
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+    
+        try {
+            const response = await fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+    
+            const result = await response.json();
+            alert(result.message); // Show alert with the response message
+    
+            if (response.ok) {
+                setTimeout(() => {
+                    window.location.href = '/index.html'; // Redirect after 1 second
+                }, 1000);
+            }
+        } catch (error) {
+            alert('Login failed: ' + error.message);
+        }
+    });
+    </script>
+    
+</html>

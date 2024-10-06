@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Reset default margin and padding */
+    body, h1, h2, h3, ul, li, p {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Add basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+    background-color: transparent;
+    color: white;
+    padding: 2rem; /* Increase padding to increase header size */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header h1 {
+    font-size: 3rem; /* Increase font size for the heading */
+    margin-bottom: 1rem;
+  }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(48, 35, 35, 0.5);
+      z-index: -1;
+    }
+
+    header video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+
+    header nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    header nav ul li {
+      margin: 0 10px;
+    }
+
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    #order-reservations {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .order-form, .reservation-form {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    .order-form h2, .reservation-form h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    th, td {
+      padding: 1rem;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f5f5f5;
+    }
+
+    .dish-image {
+      max-width: 80px;
+      max-height: 80px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    #place-order-button {
+      display: block;
+      margin: 1rem auto;
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: white;
+    }
+    .contact-details {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 2rem 0;
+      background-color: #333;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .contact-details h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .contact-details p {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <video autoplay muted loop>
+      <source src="bgvideo3.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <h1>Food Court</h1>
+    <nav>
+      <ul>
+        <li><a href="home2.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="order.html">Online Ordering</a></li>
+        <li><a href="reservations.html">Reservations</a></li>
+        <li><a href="costrev.html">Customer Reviews</a></li>
+        <li><a href="gallery.html">Photo Gallery</a></li>
+        <li><a href="offers.html">Special Offers</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="events.html">Events & Catering</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ... Previous HTML code ... -->
+
+  <section id="order-reservations">
+    <h2>Online Ordering</h2>
+
+    <div class="order-form">
+      <form id="order-form">
+        <!-- Appetizers Table -->
+        <h3>Appetizers</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Dish</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Select</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><img class="dish-image" src="spring_rollls.jpeg" alt="Spring Rolls"></td>
+              <td>Spring Rolls</td>
+              <td>RS.199</td>
+              <td><input type="checkbox" name="order-items" value="spring-rolls"></td>
+            </tr>
+            <tr>
+              <td><img class="dish-image" src="Bruschetta.jpeg" alt="Bruschetta"></td>
+              <td>Bruschetta</td>
+              <td>RS.299</td>
+              <td><input type="checkbox" name="order-items" value="bruschetta"></td>
+            </tr>
+            <tr>
+              <td><img class="dish-image" src="Boti kebab.jpg" alt="Boti kebab"></td>
+              <td>Boti Kebab</td>
+              <td>RS.299</td>
+              <td><input type="checkbox" name="order-items" value="boti-kebab"></td>
+            </tr>
+            <tr>
+              <td><img class="dish-image" src="Khandvi.jpg" alt="Khandvi"></td>
+              <td>Khandvi</td>
+              <td>RS.299</td>
+              <td><input type="checkbox" name="order-items" value="khandvi"></td>
+            </tr>
+            <tr>
+              <td><img class="dish-image" src="Bikaneri bhujia.jpg" alt="Bikaneri bhujia"></td>
+              <td>Bikaneri Bhujia</td>
+              <td>RS.299</td>
+              <td><input type="checkbox" name="order-items" value="bikaneri-bhujia"></td>
+            </tr>
+            <tr>
+              <td><img class="dish-image" src="Dahi vada.jpg" alt="Dahi vada"></td>
+              <td>Dahi Vada</td>
+              <td>RS.299</td>
+              <td><input type="checkbox" name="order-items" value="dahi-vada"></td>
+            </tr>
+            <!-- Add more appetizers here -->
+          </tbody>
+        </table>
+
+        <!-- Main Courses Table -->
+        <h3>Main Courses</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Dish</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Select</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><img class="dish-image" src="gsalmon.jpeg" alt="Grilled Salmon"></td>
+              <td>Grilled Salmon</td>
+              <td>RS.599</td>
+              <td><input type="checkbox" name="order-items" value="grilled-salmon"></td>
+            </tr>
+            <tr>
+              <td><img class="dish-image" src="calfredo.jpeg" alt="Chicken Alfredo"></td>
+              <td>Chicken Alfredo</td>
+              <td>RS.799</td>
+              <td><input type="checkbox" name="order-items" value="chicken-alfredo"></td>
+            </tr>
+            <!-- Add more main courses here -->
+          </tbody>
+        </table>
+
+        <!-- Pick-up/Delivery Time and Place Order Button -->
+        <label for="pickup-time">Pick-up/Delivery Time:</label>
+        <input type="text" id="pickup-time" name="pickup-time" placeholder="Enter time">
+        <button type="button" id="place-order-button">Place Order</button>
+      </form>
+    </div>
+
+    <!-- Rest of the code remains the same -->
+
+  </section>
+
+  <section class="contact-details">
+    <h2>Contact Us</h2>
+    <p>Email: info@foodcourt.com</p>
+    <p>Phone: +91 9392468082</p>
+    <p>Address: Near Vignan university, Vadlamudi, Guntur</p>
+    <p>&copy; 2023 Food Court. All rights reserved.</p>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const placeOrderButton = document.getElementById("place-order-button");
+    
+      placeOrderButton.addEventListener("click", function() {
+        // Perform any additional actions here, such as sending form data to a server
+    
+        // Show the success alert
+        alert("Your order has been placed successfully!");
+      });
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events and Catering Services</title>
+  <style>
+    /* Reset default margin for paragraphs */
+    p {
+      margin: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+    }
+
+    header {
+    background-color: transparent;
+    color: white;
+    padding: 2rem; /* Increase padding to increase header size */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header h1 {
+    font-size: 3rem; /* Increase font size for the heading */
+    margin-bottom: 1rem;
+  }
+  header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+
+    header video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+    header nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    header nav ul li {
+      margin: 0 15px; /* Increased spacing between navigation links */
+    }
+
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    #events-catering {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 2rem 0;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .events-section {
+      margin: 2rem 0;
+      padding: 0 2rem;
+      text-align: left;
+    }
+
+    .events-section h2 {
+      color: #333;
+    }
+
+    .events-section p {
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .contact-details {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 2rem 0;
+      background-color: #333;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .contact-details h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .contact-details p {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  
+  <header>
+    <video autoplay muted loop>
+      <source src="bgvideo7.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <h1>Food Court</h1>
+    <nav>
+      <ul>
+        <li><a href="home2.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="order.html">Online Ordering</a></li>
+        <li><a href="reservations.html">Reservations</a></li>
+        <li><a href="costrev.html">Customer Reviews</a></li>
+        <li><a href="gallery.html">Photo Gallery</a></li>
+        <li><a href="offers.html">Special Offers</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="events.html">Events & Catering</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <section id="events-catering">
+    <h1>Events and Catering Services</h1>
+
+    <div class="events-section">
+      <h2>Private Events</h2>
+      <p>Host your special occasions at our venue. From intimate gatherings to grand celebrations, we provide tailored experiences to make your event unforgettable.</p>
+    </div>
+
+    <div class="events-section">
+      <h2>Catering Services</h2>
+      <p>Bring the flavors of Your Restaurant to your events. Our catering services offer diverse menus and impeccable service for corporate events, weddings, and more.</p>
+    </div>
+
+    <div class="events-section">
+      <h2>Venue Booking</h2>
+      <p>Looking for a unique venue? Our space is available for bookings, offering a charming ambiance and exceptional service for any event.</p>
+    </div>
+  </section>
+
+  <section class="contact-details">
+    <h2>Contact Us</h2>
+    <p>Email: info@foodcourt.com</p>
+    <p>Phone: +91 9392468082</p>
+    <p>Address: Near Vignan university, Vadlamudi, Guntur</p>
+    <p>&copy; 2023 Food Court. All rights reserved.</p>
+  </section>
+
+</body>
+</html>

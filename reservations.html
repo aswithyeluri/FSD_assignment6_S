@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table Booking Management</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+    }
+
+    header {
+    background-color: transparent;
+    color: white;
+    padding: 2rem; /* Increase padding to increase header size */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header h1 {
+    font-size: 3rem; /* Increase font size for the heading */
+    margin-bottom: 1rem;
+  }
+
+    header video {
+      position: absolute; /* Set the video to be absolutely positioned */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensure video covers the entire header */
+      opacity: 0.7; /* Adjust the opacity if needed */
+      z-index: -1;
+    }
+    header nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    header nav ul li {
+      margin: 0 10px;
+    }
+
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+     #video-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    #booking-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h1, h2 {
+      margin-bottom: 1rem;
+    }
+
+    .table-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .table-layout {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .table {
+      width: calc(33.33% - 20px);
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      text-align: center;
+      font-weight: bold;
+      font-size: 14px;
+      background-color: #fff;
+      cursor: pointer;
+    }
+
+    .booked {
+      background: repeating-linear-gradient(-45deg, transparent, transparent 10px, #f5f5f5 10px, #f5f5f5 20px);
+      cursor: not-allowed;
+    }
+
+    .table-visual {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .booking-form {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f5f5f5;
+    }
+
+    .booking-form label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .booking-form input[type="number"],
+    .booking-form input[type="date"],
+    .booking-form input[type="time"] {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .booking-form button {
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .booking-form button:hover {
+      background-color: #45a049;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: white;
+    }
+    .contact-details {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 2rem 0;
+      background-color: #333;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .contact-details h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .contact-details p {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <video autoplay muted loop>
+      <source src="bgvideo4.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <h1>Food Court</h1>
+    <nav>
+      <ul>
+        <li><a href="home2.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="order.html">Online Ordering</a></li>
+        <li><a href="reservations.html">Reservations</a></li>
+        <li><a href="costrev.html">Customer Reviews</a></li>
+        <li><a href="gallery.html">Photo Gallery</a></li>
+        <li><a href="offers.html">Special Offers</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="events.html">Events & Catering</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="table-booking">
+    <h1>Table Booking Management</h1>
+    <div id="video-container">
+      <video autoplay muted loop id="booking-video">
+        <source src="bgvideo8.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <div class="table-visual">
+      <div class="table-container">
+        <div class="table-layout">
+          <div class="table booked" title="Booked Table (Capacity: 4)">1</div>
+          <div class="table" title="Available Table (Capacity: 6)">2</div>
+          <div class="table booked" title="Booked Table (Capacity: 4)">3</div>
+          <div class="table" title="Available Table (Capacity: 6)">4</div>
+          <div class="table" title="Available Table (Capacity: 6)">5</div>
+          <div class="table booked" title="Booked Table (Capacity: 4)">6</div>
+          <div class="table" title="Available Table (Capacity: 6)">7</div>
+          <div class="table" title="Available Table (Capacity: 6)">8</div>
+          <div class="table" title="Available Table (Capacity: 6)">9</div>
+          <!-- Add more tables here -->
+        </div>
+      </div>
+    </div>
+
+    <div class="booking-form">
+      <h2>Book a Table</h2>
+      <form id="booking-form">
+        <label for="table-number">Table Number:</label>
+        <input type="number" id="table-number" name="table-number" min="1">
+        <label for="booking-date">Booking Date:</label>
+        <input type="date" id="booking-date" name="booking-date">
+        <label for="booking-time">Booking Time:</label>
+        <label for="booking-from">From:</label>
+        <input type="time" id="booking-from" name="booking-from">
+        <label for="booking-to">To:</label>
+        <input type="time" id="booking-to" name="booking-to">
+        <button type="button" id="book-table-button">Book Table</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="contact-details">
+    <h2>Contact Us</h2>
+    <p>Email: info@foodcourt.com</p>
+    <p>Phone: +91 9392468082</p>
+    <p>Address: Near Vignan university, Vadlamudi, Guntur</p>
+    <p>&copy; 2023 Food Court. All rights reserved.</p>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const placeOrderButton = document.getElementById("book-table-button");
+    
+      placeOrderButton.addEventListener("click", function() {
+        // Perform any additional actions here, such as sending form data to a server
+    
+        // Show the success alert
+        alert("Your table has been booked successfully!");
+      });
+    });
+    </script>
+</body>
+</html>

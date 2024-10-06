@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="signupstyle.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Registration</h2>
+        <form action="/register" method="POST" id="signupForm">
+            <div class="input-box">
+                <input type="text" name="username" placeholder="Enter your username" required>
+            </div>
+            <div class="input-box">
+                <input type="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-box">
+                <input type="password" name="password" placeholder="Create password" required>
+            </div>
+            <div class="policy">
+                <input type="checkbox" name="terms" required>
+                <h3>I accept all terms & conditions</h3>
+            </div>
+            <div class="input-box button">
+                <input type="submit" value="Register Now">
+            </div>
+            <div class="text">
+                <h3>Already have an account? <a href="login.html">Login now</a></h3>
+            </div>
+        </form>
+    </div>
+  <!-- <script>
+    // const express = require('express');
+    // const fs = require('fs');
+    // const app = express();
+
+    // app.use(express.urlencoded({ extended: true })); // Middleware to parse URL-encoded data
+    // app.use(express.json()); // Middleware to parse JSON (just in case)
+
+    app.post('/register', (req, res) => {
+        const { username, email, password, confirmPassword, terms } = req.body;
+        
+        // Check for empty fields
+        if (!username || !email || !password || !confirmPassword) {
+            return res.status(400).send('All fields are required');
+        }
+
+        // Check if passwords match
+        if (password !== confirmPassword) {
+            return res.status(400).send('Passwords do not match');
+        }
+
+        // Check if terms are accepted
+        if (!terms) {
+            return res.status(400).send('You must accept the terms and conditions');
+        }
+
+        // Read existing users from users.json
+        let users = JSON.parse(fs.readFileSync('users.json', 'utf8'));
+
+        // Check if user already exists
+        const userExists = users.some(user => user.email === email);
+        if (userExists) {
+            return res.status(400).send('User already exists');
+        }
+
+        // Add new user to the array
+        users.push({ username, email, password });
+
+        // Save the updated users array to users.json
+        fs.writeFileSync('users.json', JSON.stringify(users, null, 2));
+
+        res.send('User registered successfully');
+    });
+
+    app.listen(3000, () => {
+        console.log('Server is running on port 3000');
+    });
+  </script> -->
+  <!-- <script>
+    const form = document.querySelector('form');
+    
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent the default form submission
+
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        fetch('/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            if (data.message === 'User registered successfully') {
+                window.location.href = '/index.html'; // Redirect to index page
+            }
+        })
+        .catch(error => {
+            alert('Registration failed');
+            console.error('Error:', error);
+        });
+    });
+  </script> -->
+  <script>
+    document.querySelector('form').addEventListener('submit', async function (e) {
+        e.preventDefault(); // Prevent default form submission
+
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+
+        try {
+            const response = await fetch('/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+            alert(result.message); // Show alert with the response message
+
+            if (response.ok) {
+                setTimeout(() => {
+                    window.location.href = '/index.html'; // Redirect after 1 second
+                }, 1000);
+            }
+        } catch (error) {
+            alert('Registration failed: ' + error.message);
+        }
+    });
+</script>    
+</body>
+</html>

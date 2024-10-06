@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5; /* Background color for the whole page */
+    }
+
+    header {
+    background-color: transparent;
+    color: white;
+    padding: 2rem; /* Increase padding to increase header size */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header h1 {
+    font-size: 3rem; /* Increase font size for the heading */
+    margin-bottom: 1rem;
+  }
+  header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+
+    header video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+   
+    header nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+    header nav ul li {
+      margin: 0 10px;
+    }
+
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: white;
+    }
+
+    /* Styles for special offers */
+    #special-offers {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .promotion {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 30px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .promotion:hover {
+      transform: scale(1.03);
+    }
+
+    .promotion img {
+      max-width: 200px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .promotion-details {
+      text-align: left;
+    }
+
+    .promotion-details h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+    }
+
+    .promotion-expiry {
+      color: #777;
+      margin-top: 5px;
+    }
+    .contact-details {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 2rem 0;
+      background-color: #333;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .contact-details h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .contact-details p {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+  </style>
+  <title>Special Offers and Promotions</title>
+</head>
+<body>
+  <header>
+    <video autoplay muted loop>
+      <source src="bgvideo4.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <h1>Food Court</h1>
+    <nav>
+      <ul>
+        <li><a href="home2.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="order.html">Online Ordering</a></li>
+        <li><a href="reservations.html">Reservations</a></li>
+        <li><a href="costrev.html">Customer Reviews</a></li>
+        <li><a href="gallery.html">Photo Gallery</a></li>
+        <li><a href="offers.html">Special Offers</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="events.html">Events & Catering</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="special-offers">
+    <h1>Special Offers and Promotions</h1>
+
+    <div class="promotion">
+      <img src="offer1.jpg" alt="Special Offer">
+      <div class="promotion-details">
+        <h2>Weekend Special</h2>
+        <p>Enjoy our exclusive weekend menu featuring seasonal dishes and cocktails. Available Friday through Sunday.</p>
+        <p class="promotion-expiry">Offer expires: August 31, 2023</p>
+      </div>
+    </div>
+
+    <div class="promotion">
+      <img src="offer2.jpg" alt="Seasonal Menu">
+      <div class="promotion-details">
+        <h2>Summer Delights</h2>
+        <p>Experience the taste of summer with our limited-time seasonal menu. From refreshing salads to tropical desserts!</p>
+        <p class="promotion-expiry">Offer ends: September 15, 2023</p>
+      </div>
+    </div>
+
+    <div class="promotion">
+      <img src="offer3.jpg" alt="Special Promotion">
+      <div class="promotion-details">
+        <h2>Family Feast</h2>
+        <p>Feast with your family with our special family-size meals. Perfect for gatherings and celebrations.</p>
+        <p class="promotion-expiry">Limited time offer</p>
+      </div>
+    </div>
+
+    <div class="promotion">
+      <img src="offer4.webp" alt="Limited Time Offer">
+      <div class="promotion-details">
+        <h2>Happy Hour Delights</h2>
+        <p>Unwind during our happy hour with discounted drinks and appetizers. Join us every weekday!</p>
+        <p class="promotion-expiry">Ongoing promotion</p>
+      </div>
+    </div>
+
+    <div class="promotion">
+      <img src="offer5.webp" alt="Special Promotion">
+      <div class="promotion-details">
+        <h2>Weekday Lunch Special</h2>
+        <p>Enjoy a delightful lunch with our specially curated weekday lunch menu. Available from 11 AM to 2 PM.</p>
+        <p class="promotion-expiry">Ongoing promotion</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Your existing content -->
+  <section class="contact-details">
+    <h2>Contact Us</h2>
+    <p>Email: info@foodcourt.com</p>
+    <p>Phone: +91 9392468082</p>
+    <p>Address: Near Vignan university, Vadlamudi, Guntur</p>
+    <p>&copy; 2023 Food Court. All rights reserved.</p>
+  </section>
+</body>
+</html>

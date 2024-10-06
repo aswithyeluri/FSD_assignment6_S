@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+         body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+            height: 100vh;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        header video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        header nav ul li {
+            margin: 0 10px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #FFD700;
+        }
+
+        body {
+            color: white; /* Set text color to white */
+        }
+
+        .sliding-templates h2 {
+            font-size: 90px; /* Increase font size */
+            text-align: center;
+            margin: 0;
+        }
+
+        .sliding-templates {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            position: absolute;
+            width: 100%;
+            height: calc(100vh - 100px); /* Adjusted height for header */
+            top: 100vh;
+            transform: translateY(-100%);
+            transition: top 0.5s;
+        }
+
+        .sliding-templates h2 {
+            font-size: 24px;
+            text-align: center;
+            margin: 0;
+        }
+
+        .sliding-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .template-arrows {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .template-arrows button {
+            font-size: 28px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #333;
+            padding: 0 20px;
+        }
+        .contact-details {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 2rem 0;
+      background-color: #333;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .contact-details h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .contact-details p {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+    </style>
+</head>
+<body>
+  <header>
+    <video autoplay muted loop>
+        <source src="bgvideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <h1>Food Court</h1>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="order.html">Online Ordering</a></li>
+            <li><a href="reservations.html">Reservations</a></li>
+            <li><a href="costrev.html">Customer Reviews</a></li>
+            <li><a href="gallery.html">Photo Gallery</a></li>
+            <li><a href="offers.html">Special Offers</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="events.html">Events & Catering</a></li>
+        </ul>
+    </nav>
+</header>
+    <div class="sliding-templates">
+        <div class="sliding-content">
+            <h2 class="template" id="template1">The choice is easy when <br>it's Real Food.</h2>
+            <h2 class="template" id="template2">You are what you eat.</h2>
+            <h2 class="template" id="template3">Don't eat less.<br> Just eat real.</h2>
+            <h2 class="template" id="template4">We are not Machines. <br>We are Real people.</h2>
+        </div>
+        <div class="template-arrows">
+            <button onclick="changeSlide(-1)">&lt;</button>
+            <button onclick="changeSlide(1)">&gt;</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 4;
+
+        function showSlide(slideNumber) {
+            currentSlide = (slideNumber + totalSlides) % totalSlides;
+            const slides = document.querySelectorAll(".sliding-content h2");
+            slides.forEach((slide, index) => {
+                slide.style.display = index === currentSlide ? "block" : "none";
+            });
+        }
+
+        function changeSlide(direction) {
+            clearInterval(slideInterval); // Clear the automatic interval
+            showSlide(currentSlide + direction);
+            slideInterval = setInterval(showNextSlide, 3000);
+        }
+
+        function showNextSlide() {
+            changeSlide(1);
+        }
+
+        let slideInterval = setInterval(showNextSlide, 3000); // Change slide every 3 seconds
+    </script>
+    <section class="contact-details">
+        <h2>Contact Us</h2>
+        <p>Email: info@foodcourt.com</p>
+        <p>Phone: +91 9392468082</p>
+        <p>Address: Near Vignan university, Vadlamudi, Guntur</p>
+        <p>&copy; 2023 Food Court. All rights reserved.</p>
+      </section>
+</body>
+</html>
